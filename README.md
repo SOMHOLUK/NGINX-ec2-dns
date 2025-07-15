@@ -28,7 +28,7 @@ Before starting this project, make sure you have:
 
 ## Step 1: 🛒 Buy a domain name through Amazon Route 53
 
-![ec2-pic-1](images/ec2-pic-1.png)
+![ec2-pic-1](/Images/ec2-pic-1.png)
 
 ## Step 2: 🚀 Start the process of launching an Amazon EC2 instance.
 
