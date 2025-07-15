@@ -28,22 +28,22 @@ Before starting this project, make sure you have:
 
 ## Step 1: 🛒 Buy a domain name through Amazon Route 53
 
-![ec2-pic-1](/Images/ec2-pic-1.png)
+![ec2-pic-1](Images/ec2-pic-1.png)
 
 ## Step 2: 🚀 Start the process of launching an Amazon EC2 instance.
 
-![ec2-pic-2](images/ec2-pic-2.png)
+![ec2-pic-2](Images/ec2-pic-2.png)
 
 ## Step 3: ⚙️ In the Instance Type section, choose the instance type: t2.micro
 
-![ec2-pic-3](images/ec2-pic-3.png)
+![ec2-pic-3](Images/ec2-pic-3.png)
 
 ## Step 4: 🔑 In the Key pair (login) section, select: <u>Create a new key pair</u>. A window will appear, allowing you to download the key pair.
 
 ⚠️ **Remember:** It is best practice to create a separate key for each EC2 instance.  
 That way, if a key is compromised, only that one instance is at risk.
 
-![ec2-pic-4](images/ec2-pic-4.png)
+![ec2-pic-4](Images/ec2-pic-4.png)
 
 ## Documentation resources
 
