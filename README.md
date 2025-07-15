@@ -45,6 +45,28 @@ That way, if a key is compromised, only that one instance is at risk.
 
 ![ec2-pic-4](Images/ec2-pic-4.png)
 
+## Step 5: In the network setting section, click on edit and enable the Auto-assign public IP address.
+
+This will give the EC2 instance automatically a public IPv4 address when it launches. Because of the EC2 instance's public IP, you can access it from the internet.
+
+![ec2-pic-5](Images/ec2-pic-5a.png)
+
+## Step 6:
+
+![ec2-pic-6](Images/ec2-pic-6.png)
+
+## Step 7:
+
+![ec2-pic-8](Images/ec2-pic-8.png)
+
+## Step 8:
+
+![ec2-pic-9](Images/ec2-pic-9.png)
+
+## Step 9:
+
+![ec2-pic-10](Images/ec2-pic-10.png)
+
 ## Documentation resources
 
 - [NGINX Deployment Guide on Amazon EC2](https://docs.nginx.com) — Official NGINX documentation for deploying on AWS EC2.
