@@ -21,17 +21,25 @@ Before starting this project, make sure you have:
 - 🌐 A registered domain name (you can buy one through Amazon Route 53 or any other domain registrar).
 - 🔑 An AWS account with permissions to launch EC2 instances and manage Route 53.
 
+---
+
 ## Step 1: 🛒 Buy a domain name through Amazon Route 53
 
 ![ec2-pic-1](Images/ec2-pic-1.png)
+
+---
 
 ## Step 2: 🚀 Start the process of launching an Amazon EC2 instance.
 
 ![ec2-pic-2](Images/ec2-pic-2.png)
 
+---
+
 ## Step 3: ⚙️ In the Instance Type section, choose the instance type: t2.micro
 
 ![ec2-pic-3](Images/ec2-pic-3.png)
+
+---
 
 ## Step 4: 🔑 In the Key pair (login) section, select: <u>Create a new key pair</u>. A window will appear, allowing you to download the key pair.
 
@@ -41,6 +49,8 @@ Before starting this project, make sure you have:
 That way, if a key is compromised, only that one instance is at risk.
 
 ![ec2-pic-4](Images/ec2-pic-4.png)
+
+---
 
 ## Step 5: In the network setting section, click on edit and enable the Auto-assign public IP address.
 
@@ -52,6 +62,8 @@ Enabling auto‑assign public IP means that a public IPv4 address is automatical
 
 ![ec2-pic-5](Images/ec2-pic-5.png)
 
+---
+
 ## Step 6: In the Network settings section, under the Firewall(Security Groups), keep Create security group selected, if this is your first setup. Furthermore, add the following rules to this security group: 1. Allow SSH traffic 2. Allow HTTP traffic from the internet.
 
 Allowing SSH traffic opens port 22 which helps you to connect to your EC2 instance.
@@ -60,26 +72,38 @@ Allowing HTTP traffic from the internet opens port 80, as port 80 is the default
 
 ![ec2-pic-6](Images/ec2-pic-6.png)
 
+---
+
 ## Step 7: Launch the EC2 instance.
 
 ![ec2-pic-7](Images/ec2-pic-7.png)
+
+---
 
 ## Step 8: You will see this message after you have successfully launched the instance.
 
 ![ec2-pic-8](Images/ec2-pic-8.png)
 
+---
+
 ## Step 9: The EC2 instance is now running. You can now connect to it using SSH.
 
 ![ec2-pic-9](Images/ec2-pic-9.png)
+
+---
 
 ## Step 10: In the inbound rules tab of your security group, verify that the rules you created in Step 6 such as SSH on port 22 and HTTP on port 80 are listed.
 
 ![ec2-pic-10](Images/ec2-pic-10.png)
 
+---
+
 ## Step 11: Click on Connect above the EC2 instance and you will be directed to the Connect to instance page, with the SSH client tab selected by default.
 
 ![ec2-pic-11](Images/ec2-pic-11.png)
 ![ec2-pic-12](Images/ec2-pic-12.png)
+
+---
 
 ## Step 12: Navigate to the Desktop, create a directory/folder called Nginx, navigate to the directory/folder Nginx and drag the Nginx-key.pem into the Nginx folder.
 
@@ -92,6 +116,8 @@ step 2. cd Nginx
 
 ![ec2-pic-13](Images/ec2-pic-13.png)
 
+---
+
 ## Step 13: To ensure only you have access to this key, run the following command:
 
 ```
@@ -100,14 +126,20 @@ chmod 400 "Nginx-key.pem"
 
 ![ec2-pic-14](Images/ec2-pic-14.png)
 
+---
+
 ## Step 14: Copy the ssh command (at the bottom of the first picture) from the Connect to instance page and run it in your terminal, in the Nginx folder you created for step 12, to connect to your EC2 instance (as you can see in the 2nd picture below).
 
 ![ec2-pic-12](Images/ec2-pic-12.png)
 ![ec2-pic-15](Images/ec2-pic-15.png)
 
+---
+
 ## Step 15: You are now connected to the instance over SSH.
 
 ![alt text](Images/ec2-pic-16.png)
+
+---
 
 ## Step 16: Install Nginx using the following command, as you can see in the screenshot below as well:
 
@@ -117,6 +149,8 @@ sudo apt install nginx
 ```
 
 ![ec2-pic-17](Images/ec2-pic-17.png)
+
+---
 
 ## Step 17: Once the installation of Nginx is complete, check if Nginx is running by using the following command, like in the screenshot:
 
@@ -133,17 +167,17 @@ sudo systemctl start nginx
 
 ```
 
-## Step 18
+---
 
-To ensure Nginx starts automatically when the instance boots, run the following command:
-
-When you stop and then start your EC2 instance again, or if it reboots for any reason (e.g., AWS maintenance or a crash), NGINX will automatically start running without you having to manually start it if you use the following command:
+## Step 18 When you stop and then start your EC2 instance again, or if it reboots for any reason (e.g., AWS maintenance or a crash), NGINX will automatically start running without you having to manually start it if you use the following command:
 
 ```
 sudo systemctl enable nginx
 ```
 
 ![ec2-pic-19](Images/ec2-pic-19.png)
+
+---
 
 ## Documentation resources
 
