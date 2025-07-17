@@ -158,7 +158,7 @@ chmod 400 "Nginx-key.pem"
 ```
 
 - chmod changes file permissions in Linux/Unix.
-<br>
+  <br>
 
 - 400 sets the file’s permissions to: That it can be read by the owner (the user account that owns the file).
 
@@ -168,9 +168,11 @@ chmod 400 "Nginx-key.pem"
 
 <br>
 
-### Step 14: Copy the ssh command (at the bottom of the first picture) from the Connect to instance page and run it in your terminal, in the Nginx folder you created for step 12, to connect to your EC2 instance (as you can see in the 2nd picture below).
+### Step 14: Copy the ssh command (at the bottom of the screenshot, this is the same screenshot from Step 11) from the Connect to instance page and run it in your terminal, in the Nginx folder you created for step 12, to connect to your EC2 instance (as you can see in the 2nd screenshot below).
 
 ![ec2-pic-12](Images/ec2-pic-12.png)
+<br>
+
 ![ec2-pic-15](Images/ec2-pic-15.png)
 
 ---
