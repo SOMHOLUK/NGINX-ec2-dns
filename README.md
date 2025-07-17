@@ -136,7 +136,7 @@ Allowing HTTP traffic (= web traffic) from the internet opens port 80, as port 8
 
 <br>
 
-### Step 12: Navigate to the Desktop, create a directory/folder called Nginx, navigate to the directory/folder Nginx and drag the Nginx-key.pem into the Nginx folder.
+### Step 12: The screenshot below is from an Ubuntu machine that I launched in Oracle VirtualBox. Navigate to the Desktop, create a directory/folder called Nginx, navigate to the directory/folder Nginx and drag the Nginx-key.pem into the Nginx folder.
 
 ```
 Step 1. cd Desktop
