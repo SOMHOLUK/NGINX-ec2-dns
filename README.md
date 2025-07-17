@@ -26,7 +26,7 @@ Before starting this project, make sure you have:
 
 - 🌐 A registered domain name (you can buy one through Amazon Route 53 or any other domain registrar).
 - 🔑 An AWS account with permissions to launch EC2 instances and manage Route 53.
-- During this project, an Ubuntu machine was used in Oracle VirtualBox.
+- 💻 During this project, an Ubuntu machine was used in Oracle VirtualBox.
 
 ---
 
@@ -248,9 +248,11 @@ sudo systemctl enable nginx
 
 ![ec2-pic-20](Images/ec2-pic-20.png)
 
-### ⚠️However, this is not what we want. We want the domain name nginx.filsanhdmohamed.co.uk pointing to the public IP of the EC2 instance.
+### ⚠️However, this is not the objective/goal of this project. The domain name nginx.filsanhdmohamed.co.uk should point to the public IP of the EC2 instance, which will allow us to see the same page, but instead of seeing the EC2 instance’s IPv4 address in the browser’s address bar, you will see the domain name: nginx.filsanhdmohamed.co.uk .This configuration will be done using the DNS provider, Amazon Route 53.
 
-### Step 21: You go to the hosted zones in Amazon route 53 and click on your domain name.
+<br>
+
+### Step 21: The objective is that when you type the domain name, nginx.filsanhdmohamed.co.uk , in the address bar, that you should see the NGINX welcome page. This can be done if the domain name nginx.filsanhdmohamed.co.uk points to the public IPv4 address of the Amazon EC2 instance. This configuration will be done by using the DNS provider, Amazon Route 53. As you have already read in the prerequisites, the domain filsanhdmohamed.co.uk was already bought through Amazon Route 53. Now,you go to the hosted zones in Amazon route 53 and click on your domain name.
 
 ![ec2-pic-21](Images/ec2-pic-21.png)
 
