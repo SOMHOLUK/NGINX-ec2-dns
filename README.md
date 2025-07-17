@@ -25,7 +25,10 @@ This project involves setting up a publicly accessible NGINX web server on an Am
 Before starting this project, make sure you have:
 
 - 🌐 A registered domain name (you can buy one through Amazon Route 53 or any other domain registrar).
-- 🔑 An AWS account with permissions to launch EC2 instances and manage Route 53.
+
+- 🔑 An AWS account with permissions to launch EC2 instances and manage Route 53. There is the option of making
+  an AWS Free Tier account.
+
 - 💻 During this project, an Ubuntu machine was used in Oracle VirtualBox.
 
 ---
@@ -262,17 +265,32 @@ sudo systemctl enable nginx
 
 ![ec2-pic-22](Images/ec2-pic-22.png)
 
+<br>
+
 ### Step 23: The subdomain was given the name nginx as you can see in the screenshot below, the Rercord type was set to A, and the public IP of the EC2 instance was put into the value section as you can see in the screenshot below.Here, you have created an A record in DNS that points your domain name (in my case: nginx.filsanhdmohamed.co.uk) to the EC2 public IPv4 address. Click on Create a record, at the bottom right.
 
+<br>
+
 ![ec2-pic-23](Images/ec2-pic-23.png)
+
+<br>
 
 ### Step 24: The below message will appear and the website is now live and accessible via the domain name nginx.filsanhdmohamed.co.uk.
 
 ![ec2-pic-24](Images/ec2-pic-24.png)
 
+<br>
+
 ### Step 25: The website was accessed via the domain name nginx.filsanhdmohamed.co.uk.
 
 ![ec2-pic-25](Images/ec2-pic-25.png)
+
+### Step 26: When you are done with using the Amazon EC2 instance, you get rid of it by selecting the instance as in the picture, clicking on Instance state and then click terminate/delete the instance. You do this so you will not be charged unnecessarily for an EC2 instance that you no longer use.
+
+![ec2-pic-28](Images/ec2-pic-28.png)
+
+<br>
+<br>
 
 ### Documentation resources
 
