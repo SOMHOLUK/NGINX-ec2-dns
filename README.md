@@ -1,12 +1,12 @@
 # Deploying NGINX on Amazon EC2 with DNS Configuration
 
-## 📄 Project Description
+### 📄 Project Description
 
 This project involves setting up a publicly accessible NGINX web server on an Amazon EC2 instance. After launching an EC2 instance, NGINX is installed and configured to serve content over HTTP on port 80, with the necessary inbound rules added to the EC2 instance’s security group to allow both SSH and HTTP traffic. To make the server reachable through a domain name instead of just an IP address, an A record is created in the DNS provider Amazon Route 53. This A record points the chosen domain to the public IP of the EC2 instance. As a result, you can open a browser and access the default NGINX welcome page simply by visiting the domain, in this case nginx.filsanhdmohamed.co.uk
 
 ---
 
-## 🛠 Technologies Used
+### 🛠 Technologies Used
 
 - Amazon EC2
 - NGINX
@@ -14,7 +14,7 @@ This project involves setting up a publicly accessible NGINX web server on an Am
 
 ---
 
-## Pre-requisites
+### Pre-requisites
 
 Before starting this project, make sure you have:
 
@@ -23,27 +23,30 @@ Before starting this project, make sure you have:
 
 ---
 
-## Step 1: 🛒 Buy a domain name through Amazon Route 53
+<br> 
+### Step 1: 🛒 Buy a domain name through Amazon Route 53
 
 ![ec2-pic-1](Images/ec2-pic-1.png)
 
 ---
 
-## Step 2: 🚀 Start the process of launching an Amazon EC2 instance.
+<br> 
+### Step 2: 🚀 Start the process of launching an Amazon EC2 instance.
 
 ![ec2-pic-2](Images/ec2-pic-2.png)
 
 ---
 
-## Step 3: ⚙️ In the Instance Type section, choose the instance type: t2.micro
+### Step 3: ⚙️ In the Instance Type section, choose the instance type: t2.micro
 
 ![ec2-pic-3](Images/ec2-pic-3.png)
 
 ---
 
-## Step 4: 🔑 In the Key pair (login) section, select: <u>Create a new key pair</u>. A window will appear, allowing you to download the key pair.
+<br> 
+### Step 4: 🔑 In the Key pair (login) section, select: <u>Create a new key pair</u>. A window will appear, allowing you to download the key pair.
 
-## Download the key pair.
+#### Download the key pair.
 
 ⚠️ **Remember:** It is best practice to create a separate key for each EC2 instance.  
 That way, if a key is compromised, only that one instance is at risk.
@@ -52,7 +55,8 @@ That way, if a key is compromised, only that one instance is at risk.
 
 ---
 
-## Step 5: In the network setting section, click on edit and enable the Auto-assign public IP address.
+<br> 
+### Step 5: In the network setting section, click on edit and enable the Auto-assign public IP address.
 
 Enabling auto‑assign public IP means that a public IPv4 address is automatically assigned to the EC2 instance when it launches (when it is created). Because of the EC2 instance's public IPv4 address, the EC2 instance can be accessed from the internet.
 
@@ -64,7 +68,8 @@ Enabling auto‑assign public IP means that a public IPv4 address is automatical
 
 ---
 
-## Step 6: In the Network settings section, under the Firewall(Security Groups), keep Create security group selected, if this is your first setup. Furthermore, add the following rules to this security group: 1. Allow SSH traffic 2. Allow HTTP traffic from the internet.
+<br> 
+### Step 6: In the Network settings section, under the Firewall(Security Groups), keep Create security group selected, if this is your first setup. Furthermore, add the following rules to this security group: 1. Allow SSH traffic 2. Allow HTTP traffic from the internet.
 
 Allowing SSH traffic opens port 22 which helps you to connect to your EC2 instance.
 
@@ -74,38 +79,44 @@ Allowing HTTP traffic from the internet opens port 80, as port 80 is the default
 
 ---
 
-## Step 7: Launch the EC2 instance.
+<br> 
+### Step 7: Launch the EC2 instance.
 
 ![ec2-pic-7](Images/ec2-pic-7.png)
 
 ---
 
-## Step 8: You will see this message after you have successfully launched the instance.
+<br> 
+### Step 8: You will see this message after you have successfully launched the instance.
 
 ![ec2-pic-8](Images/ec2-pic-8.png)
 
 ---
 
-## Step 9: The EC2 instance is now running. You can now connect to it using SSH.
+<br> 
+### Step 9: The EC2 instance is now running. You can now connect to it using SSH.
 
 ![ec2-pic-9](Images/ec2-pic-9.png)
 
 ---
 
-## Step 10: In the inbound rules tab of your security group, verify that the rules you created in Step 6 such as SSH on port 22 and HTTP on port 80 are listed.
+<br> 
+### Step 10: In the inbound rules tab of your security group, verify that the rules you created in Step 6 such as SSH on port 22 and HTTP on port 80 are listed.
 
 ![ec2-pic-10](Images/ec2-pic-10.png)
 
 ---
 
-## Step 11: Click on Connect above the EC2 instance and you will be directed to the Connect to instance page, with the SSH client tab selected by default.
+<br> 
+### Step 11: Click on Connect above the EC2 instance and you will be directed to the Connect to instance page, with the SSH client tab selected by default.
 
 ![ec2-pic-11](Images/ec2-pic-11.png)
 ![ec2-pic-12](Images/ec2-pic-12.png)
 
 ---
 
-## Step 12: Navigate to the Desktop, create a directory/folder called Nginx, navigate to the directory/folder Nginx and drag the Nginx-key.pem into the Nginx folder.
+<br> 
+### Step 12: Navigate to the Desktop, create a directory/folder called Nginx, navigate to the directory/folder Nginx and drag the Nginx-key.pem into the Nginx folder.
 
 ```
 Step 1. cd Desktop
@@ -118,7 +129,8 @@ step 2. cd Nginx
 
 ---
 
-## Step 13: To ensure only you have access to this key, run the following command:
+<br> 
+### Step 13: To ensure only you have access to this key, run the following command:
 
 ```
 chmod 400 "Nginx-key.pem"
@@ -128,20 +140,23 @@ chmod 400 "Nginx-key.pem"
 
 ---
 
-## Step 14: Copy the ssh command (at the bottom of the first picture) from the Connect to instance page and run it in your terminal, in the Nginx folder you created for step 12, to connect to your EC2 instance (as you can see in the 2nd picture below).
+<br> 
+### Step 14: Copy the ssh command (at the bottom of the first picture) from the Connect to instance page and run it in your terminal, in the Nginx folder you created for step 12, to connect to your EC2 instance (as you can see in the 2nd picture below).
 
 ![ec2-pic-12](Images/ec2-pic-12.png)
 ![ec2-pic-15](Images/ec2-pic-15.png)
 
 ---
 
-## Step 15: You are now connected to the instance over SSH.
+<br> 
+### Step 15: You are now connected to the instance over SSH.
 
 ![alt text](Images/ec2-pic-16.png)
 
 ---
 
-## Step 16: Install Nginx using the following command, as you can see in the screenshot below as well:
+<br> 
+### Step 16: Install Nginx using the following command, as you can see in the screenshot below as well:
 
 ```
 sudo apt update -y && \
@@ -152,7 +167,8 @@ sudo apt install nginx
 
 ---
 
-## Step 17: Once the installation of Nginx is complete, check if Nginx is running by using the following command, like in the screenshot:
+<br> 
+### Step 17: Once the installation of Nginx is complete, check if Nginx is running by using the following command, like in the screenshot:
 
 ```
 sudo systemctl status nginx
@@ -169,7 +185,8 @@ sudo systemctl start nginx
 
 ---
 
-## Step 18 When you stop and then start your EC2 instance again, or if it reboots for any reason (e.g., AWS maintenance or a crash), NGINX will automatically start running without you having to manually start it if you use the following command:
+<br> 
+### Step 18: When you stop and then start your EC2 instance again, or if it reboots for any reason (e.g., AWS maintenance or a crash), NGINX will automatically start running without you having to manually start it if you use the following command:
 
 ```
 sudo systemctl enable nginx
@@ -179,7 +196,38 @@ sudo systemctl enable nginx
 
 ---
 
-## Documentation resources
+<br>
+### Step 18: If you put the EC2 public Ipv4 address in the browser now, you should see the Nginx default welcome page, like in the screenshot below:
+
+![ec2-pic-19](ec2-pic-20.png)
+
+However, this is not what we want. We want the domain name nginx.filsanhdmohamed.co.uk pointing to the public IP of the EC2 instance.
+
+### Step 19: You go to the hosted zones in Amazon route 53 and click on your domain name.
+
+![ec2-pic-19](ec2-pic-21.png)
+
+<br>
+
+### Step 20: Click on create record.
+
+![ec2-pic-19](ec2-pic-22.png)
+
+### Step 21: The subdomain was given the name nginx as you can see in the screenshot below, the Rercord type was set to A, and the public IP of the EC2 instance was put into the value section as you can see in the screenshot below.
+
+Here, you have created an A record in DNS that points your domain name to the EC2 IP.
+
+![ec2-pic-19](ec2-pic-23.png)
+
+### Step 21: The below message will appear and the website is now live and accessible via the domain name nginx.filsanhdmohamed.co.uk.
+
+![ec2-pic-24](ec2-pic-24.png)
+
+### Step 22: The website was accessed via the domain name nginx.filsanhdmohamed.co.uk.
+
+![ec2-pic-25](ec2-pic-25.png)
+
+### Documentation resources
 
 - [NGINX Deployment Guide on Amazon EC2](https://docs.nginx.com) — Official NGINX documentation for deploying on AWS EC2.
 - [Amazon Web Services (AWS) Documentation](https://docs.aws.amazon.com/) — Official AWS documentation and user guides.
