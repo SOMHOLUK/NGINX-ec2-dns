@@ -285,6 +285,8 @@ sudo systemctl enable nginx
 
 ![ec2-pic-25](Images/ec2-pic-25.png)
 
+<br>
+
 ### Step 26: When you are done with using the Amazon EC2 instance, you get rid of it by selecting the instance as in the picture, clicking on Instance state and then click terminate/delete the instance. You do this so you will not be charged unnecessarily for an EC2 instance that you no longer use.
 
 ![ec2-pic-28](Images/ec2-pic-28.png)
