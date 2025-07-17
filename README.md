@@ -1,8 +1,15 @@
 # Configure NGINX on Amazon EC2 with Route 53 DNS
 
+
+#### What is NGINX?
+
+NGINX is a web server. That means that it is a program that listens when your browser asks for something and then sends back the right files, like HTML, CSS, JavaScript, or images, so that a website can show up on your screen quickly.
+
+NGINX can also do more than just send files. A lot of people use NGINX together with other apps (like Node.js, Python, or Java apps) on the Amazon EC2 instance. In that setup, NGINX acts like a helper in front of your app. It can handle things like sharing the traffic between servers (load balancing), storing copies of pages (caching), handling secure connections (SSL), and serving static files (HTML, CSS, Javascript and images), while your app just focuses on running its own logic (doing what ever it was built for).
+
 ### 📄 Project Description
 
-This project involves setting up a publicly accessible NGINX web server on an Amazon EC2 instance. After launching an EC2 instance, NGINX is installed and configured to serve content over HTTP on port 80, with the necessary inbound rules added to the EC2 instance’s security group to allow both SSH and HTTP traffic. To make the server reachable through a domain name instead of just an IP address, an A record is created in the DNS provider Amazon Route 53. This A record points the chosen domain to the public IP of the EC2 instance. As a result, you can open a browser and access the default NGINX welcome page simply by visiting the domain, in this case nginx.filsanhdmohamed.co.uk
+This project involves setting up a publicly accessible NGINX web server on an Amazon EC2 instance (which is a virtual computer running in the cloud). After launching an EC2 instance, NGINX is installed and configured to serve content (such as web pages) over HTTP on port 80, with the necessary inbound rules added to the EC2 instance’s security group to allow both SSH and HTTP traffic. To make the NGINX server reachable (in this for NGINX to show the default welcome page) through a domain name (in this case : nginx.filsanhdmohamed.co.uk) instead of just an IP address (as you can also view NGINX's welcome page by using the EC2 instance's IPv4 address, as you will see later on), an A record is created in the DNS provider Amazon Route 53. This A record points the domain to the public IP of the EC2 instance. As a result, you can open a browser and access the default NGINX welcome page simply by visiting the domain, which is in this case nginx.filsanhdmohamed.co.uk
 
 ---
 
