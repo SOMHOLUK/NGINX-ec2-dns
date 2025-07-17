@@ -197,27 +197,27 @@ sudo systemctl enable nginx
 ---
 
 <br>
-### Step 18: If you put the EC2 public Ipv4 address in the browser now, you should see the Nginx default welcome page, like in the screenshot below:
+### Step 19: If you put the EC2 public Ipv4 address in the browser now, you should see the Nginx default welcome page, like in the screenshot below:
 
-![ec2-pic-19](ec2-pic-20.png)
+![ec2-pic-20](ec2-pic-20.png)
 
 However, this is not what we want. We want the domain name nginx.filsanhdmohamed.co.uk pointing to the public IP of the EC2 instance.
 
 ### Step 19: You go to the hosted zones in Amazon route 53 and click on your domain name.
 
-![ec2-pic-19](ec2-pic-21.png)
+![ec2-pic-21](ec2-pic-21.png)
 
 <br>
 
 ### Step 20: Click on create record.
 
-![ec2-pic-19](ec2-pic-22.png)
+![ec2-pic-22](ec2-pic-22.png)
 
 ### Step 21: The subdomain was given the name nginx as you can see in the screenshot below, the Rercord type was set to A, and the public IP of the EC2 instance was put into the value section as you can see in the screenshot below.
 
 Here, you have created an A record in DNS that points your domain name to the EC2 IP.
 
-![ec2-pic-19](ec2-pic-23.png)
+![ec2-pic-23](ec2-pic-23.png)
 
 ### Step 21: The below message will appear and the website is now live and accessible via the domain name nginx.filsanhdmohamed.co.uk.
 
