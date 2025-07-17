@@ -8,7 +8,7 @@ NGINX can also do more than just send files. A lot of people use NGINX together 
 
 ### 📄 Project Description
 
-This project involves setting up a publicly accessible NGINX web server on an Amazon EC2 instance (which is a virtual computer running in the cloud). After launching an EC2 instance, NGINX is installed and configured to serve content (such as web pages) over HTTP on port 80, with the necessary inbound rules added to the EC2 instance’s security group to allow both SSH and HTTP traffic. To make the NGINX server reachable (in this for NGINX to show the default welcome page) through a domain name (in this case : nginx.filsanhdmohamed.co.uk) instead of just an IP address (as you can also view NGINX's welcome page by using the EC2 instance's IPv4 address, as you will see later on), an A record is created in the DNS provider Amazon Route 53. This A record points the domain to the public IP of the EC2 instance. As a result, you can open a browser and access the default NGINX welcome page simply by visiting the domain, which is in this case nginx.filsanhdmohamed.co.uk
+This project involves setting up a publicly accessible NGINX web server on an Amazon EC2 instance (which is a virtual computer running in the cloud). After launching an EC2 instance, NGINX is installed and configured to serve content (such as web pages) over HTTP on port 80, with the necessary inbound rules added to the EC2 instance’s security group to allow both SSH and HTTP traffic. To make the NGINX server reachable (in this for NGINX to show the default welcome page) through a domain name (in this case : nginx.filsanhdmohamed.co.uk) instead of just an IP address (as you can also view NGINX's welcome page by using the EC2 instance's public IPv4 address, as you will see later on), an A record is created in the DNS provider Amazon Route 53. This A record points the domain to the public IP of the EC2 instance. As a result, you can open a browser and access the default NGINX welcome page simply by visiting the domain, which is in this case nginx.filsanhdmohamed.co.uk
 
 ---
 
@@ -248,11 +248,11 @@ sudo systemctl enable nginx
 
 ![ec2-pic-20](Images/ec2-pic-20.png)
 
-### ⚠️However, this is not the objective/goal of this project. The domain name nginx.filsanhdmohamed.co.uk should point to the public IP of the EC2 instance, which will allow us to see the same page, but instead of seeing the EC2 instance’s IPv4 address in the browser’s address bar, you will see the domain name: nginx.filsanhdmohamed.co.uk .This configuration will be done using the DNS provider, Amazon Route 53.
+### ⚠️However, this is not the objective/goal of this project. The domain name nginx.filsanhdmohamed.co.uk should point to the public IP of the EC2 instance, which will allow us to see the same page, but instead of seeing the EC2 instance’s public IPv4 address in the browser’s address bar, you will see the domain name: nginx.filsanhdmohamed.co.uk .This configuration will be done using the DNS provider, Amazon Route 53.
 
 <br>
 
-### Step 21: The objective is that when you type the domain name, nginx.filsanhdmohamed.co.uk , in the address bar, that you should see the NGINX welcome page. This can be done if the domain name nginx.filsanhdmohamed.co.uk points to the public IPv4 address of the Amazon EC2 instance. This configuration will be done by using the DNS provider, Amazon Route 53. As you have already read in the prerequisites, the domain filsanhdmohamed.co.uk was already bought through Amazon Route 53. Now,you go to the hosted zones in Amazon route 53 and click on your domain name.
+### Step 21: The objective is that when you type the domain name, nginx.filsanhdmohamed.co.uk , in the address bar, that you should see the NGINX welcome page. This can be done if the domain name nginx.filsanhdmohamed.co.uk points to the public IPv4 address of the Amazon EC2 instance. This configuration will be done by using the DNS provider, Amazon Route 53. As you have already read in the prerequisites, the domain filsanhdmohamed.co.uk was already bought through Amazon Route 53. You can see my domain name below in hosted zones in Amazon route 53. Click on the domain.
 
 ![ec2-pic-21](Images/ec2-pic-21.png)
 
@@ -262,9 +262,7 @@ sudo systemctl enable nginx
 
 ![ec2-pic-22](Images/ec2-pic-22.png)
 
-### Step 23: The subdomain was given the name nginx as you can see in the screenshot below, the Rercord type was set to A, and the public IP of the EC2 instance was put into the value section as you can see in the screenshot below.
-
-Here, you have created an A record in DNS that points your domain name to the EC2 IP.
+### Step 23: The subdomain was given the name nginx as you can see in the screenshot below, the Rercord type was set to A, and the public IP of the EC2 instance was put into the value section as you can see in the screenshot below.Here, you have created an A record in DNS that points your domain name (in my case: nginx.filsanhdmohamed.co.uk) to the EC2 public IPv4 address. Click on Create a record, at the bottom right.
 
 ![ec2-pic-23](Images/ec2-pic-23.png)
 
