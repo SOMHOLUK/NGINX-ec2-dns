@@ -240,6 +240,7 @@ sudo systemctl enable nginx
 
 ![ec2-pic-27](Images/ec2-pic-27.png)
 
+<br>
 
 ### Step 20: If you put the EC2 public Ipv4 address in the browser now, you should see the Nginx default welcome page, like in the screenshot below:
 
@@ -247,7 +248,7 @@ sudo systemctl enable nginx
 
 ![ec2-pic-20](Images/ec2-pic-20.png)
 
-However, this is not what we want. We want the domain name nginx.filsanhdmohamed.co.uk pointing to the public IP of the EC2 instance.
+### ⚠️However, this is not what we want. We want the domain name nginx.filsanhdmohamed.co.uk pointing to the public IP of the EC2 instance.
 
 ### Step 21: You go to the hosted zones in Amazon route 53 and click on your domain name.
 
