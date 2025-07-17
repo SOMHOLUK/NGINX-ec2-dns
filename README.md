@@ -1,4 +1,4 @@
-# Deploying NGINX on Amazon EC2 with DNS Configuration
+# Configure NGINX on Amazon EC2 with Route 53 DNS
 
 ### 📄 Project Description
 
