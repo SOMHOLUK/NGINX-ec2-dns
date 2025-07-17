@@ -26,6 +26,7 @@ Before starting this project, make sure you have:
 
 - 🌐 A registered domain name (you can buy one through Amazon Route 53 or any other domain registrar).
 - 🔑 An AWS account with permissions to launch EC2 instances and manage Route 53.
+- During this project, an Ubuntu machine was used in Oracle VirtualBox.
 
 ---
 
@@ -219,7 +220,7 @@ sudo systemctl start nginx
 
 <br>
 
-### Step 18: When you stop and then start your EC2 instance again, or if it reboots for any reason (e.g., AWS maintenance or a crash), NGINX will automatically start running without you having to manually start it if you use the following command:
+### Step 18: When you stop and then start your EC2 instance again, or if it reboots for any reason (e.g., AWS maintenance or a crash), NGINX will automatically start running without you having to manually start it if you use the following command, like done in the screenshot below:
 
 ```
 sudo systemctl enable nginx
