@@ -179,7 +179,7 @@ chmod 400 "Nginx-key.pem"
 
 <br>
 
-### Step 15: You are now connected to the Amazon EC2 instance over SSH.
+### Step 15: You are now connected to the Amazon EC2 instance via SSH.
 
 ![alt text](Images/ec2-pic-16.png)
 
