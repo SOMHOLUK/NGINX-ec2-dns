@@ -157,6 +157,9 @@ step 2. cd Nginx
 chmod 400 "Nginx-key.pem"
 ```
 
+chmod changes file permissions in Linux/Unix.
+400 sets the file’s permissions to: That it can be read by the owner (the user account that owns the file).
+
 ![ec2-pic-14](Images/ec2-pic-14.png)
 
 ---
