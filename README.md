@@ -92,6 +92,9 @@ Allowing HTTP traffic (= web traffic) from the internet opens port 80, as port 8
 
 ![ec2-pic-6](Images/ec2-pic-6.png)
 
+⚠️ This project is for learning purposes, but please be aware that SSH access
+is never left open to the entire internet (0.0.0.0/0) in a well-secured production environment, as in the picture above, where it says: allow SSH traffic from >> Anywhere (0.0.0.0/0) . Open SSH ports are constantly scanned by bots, and brute-force attacks happen all the time. Limiting it to known IP addresses massively reduces risk.
+
 ---
 
 <br>
