@@ -1,7 +1,6 @@
 # Configure NGINX on Amazon EC2 with Route 53 DNS
 
-
-#### What is NGINX?
+### What is NGINX?
 
 NGINX is a web server. That means that it is a program that listens when your browser asks for something and then sends back the right files, like HTML, CSS, JavaScript, or images, so that a website can show up on your screen quickly.
 
@@ -30,7 +29,7 @@ Before starting this project, make sure you have:
 
 ---
 
-<br> 
+<br>
 
 ### Step 1: 🛒 Buy a domain name through Amazon Route 53
 
@@ -38,9 +37,9 @@ Before starting this project, make sure you have:
 
 ---
 
-<br> 
+<br>
 
-### Step 2: 🚀 Start the process of launching an Amazon EC2 instance.
+### Step 2: 🚀 Start the process of launching an Amazon EC2 instance. The Ubuntu machine was chosen here.
 
 ![ec2-pic-2](Images/ec2-pic-2.png)
 
@@ -52,7 +51,7 @@ Before starting this project, make sure you have:
 
 ---
 
-<br> 
+<br>
 
 ### Step 4: 🔑 In the Key pair (login) section, select: <u>Create a new key pair</u>. A window will appear, allowing you to download the key pair.
 
@@ -65,13 +64,13 @@ That way, if a key is compromised, only that one instance is at risk.
 
 ---
 
-<br> 
+<br>
 
 ### Step 5: In the network setting section, click on edit and enable the Auto-assign public IP address.
 
 Enabling auto‑assign public IP means that a public IPv4 address is automatically assigned to the EC2 instance when it launches (when it is created). Because of the EC2 instance's public IPv4 address, the EC2 instance can be accessed from the internet.
 
-⚠️ **Be aware:** Although you will understand this after you have read all the steps of this project, it will be mentioned here, so you can always come back to read this part. Since you have enabled the default auto-assigned public IP, this will automatically give your EC2 instance an IPv4 address, when it launches(or is created) , so if you stop the EC2 instance after it has been launched at a later stage and start it again later on (stop/start EC2 instance), your EC2 instance could be assigned a new public IPv4 address. This means you will have to update the DNS record, in other words update the value field/section with the new public IPv4 address your EC2 instance has been given after you stopped the EC2 instance and started the EC2 instance. If you do not update the DNS record with the new IPv4 address, your domain (example.com or example.co.uk) would still be pointing to the old IPv4 address and therefore your website would stop working.
+⚠️ **Be aware:** Although you will understand this after you have read all the steps of this project, it will be mentioned here, so you can always come back to read this part. Since you have enabled the default auto-assigned public IP, this will automatically give your EC2 instance an IPv4 address, when it launches(or is created) , so if you stop the EC2 instance after it has been launched at a later stage and start it again later on (stop/start EC2 instance), your EC2 instance could be assigned a new public IPv4 address. This means you will have to update the DNS record, in other words update the value field/section with the new public IPv4 address your EC2 instance has been given after you stopped the EC2 instance and started the EC2 instance. If you do not update the DNS record with the new IPv4 address, the domain (in thise case : nginx.filsanhdmohamed.co.uk) would still be pointing to the old IPv4 address and therefore the website would stop working.
 
 - This is outside the scope of this project, but an Elastic IP provides a static IPv4 address that remains the same even if you stop and start your EC2 instance.
 
@@ -79,19 +78,19 @@ Enabling auto‑assign public IP means that a public IPv4 address is automatical
 
 ---
 
-<br> 
+<br>
 
 ### Step 6: In the Network settings section, under the Firewall(Security Groups), keep Create security group selected, if this is your first setup. Furthermore, add the following rules to this security group: 1. Allow SSH traffic 2. Allow HTTP traffic from the internet.
 
 Allowing SSH traffic opens port 22 which helps you to connect to your EC2 instance.
 
-Allowing HTTP traffic from the internet opens port 80, as port 80 is the default port for HTTP, so your web server’s (in this case it will be NGINX's) HTTP endpoint can be accessed from anywhere.
+Allowing HTTP traffic (= web traffic) from the internet opens port 80, as port 80 is the default port for HTTP, so your web server’s (in this case it will be NGINX's) HTTP endpoint can be accessed from anywhere.
 
 ![ec2-pic-6](Images/ec2-pic-6.png)
 
 ---
 
-<br> 
+<br>
 
 ### Step 7: Launch the EC2 instance.
 
@@ -99,7 +98,7 @@ Allowing HTTP traffic from the internet opens port 80, as port 80 is the default
 
 ---
 
-<br> 
+<br>
 
 ### Step 8: You will see this message after you have successfully launched the instance.
 
@@ -107,32 +106,35 @@ Allowing HTTP traffic from the internet opens port 80, as port 80 is the default
 
 ---
 
-<br> 
+<br>
 
-### Step 9: The EC2 instance is now running. You can now connect to it using SSH.
+### Step 9: The EC2 instance is running now.
 
 ![ec2-pic-9](Images/ec2-pic-9.png)
 
 ---
 
-<br> 
+<br>
 
-### Step 10: In the inbound rules tab of your security group, verify that the rules you created in Step 6 such as SSH on port 22 and HTTP on port 80 are listed.
+### Step 10: In the inbound rules tab of your security group, verify that the rules you selected in step 6 such as SSH on port 22 and HTTP on port 80 are listed.
 
 ![ec2-pic-10](Images/ec2-pic-10.png)
 
 ---
 
-<br> 
+<br>
 
-### Step 11: Click on Connect above the EC2 instance and you will be directed to the Connect to instance page, with the SSH client tab selected by default.
+### Step 11: Click on Connect above the EC2 instance and you will be directed to the Connect to instance page, with the SSH client tab selected by default, as you can see in the 2nd screenshot.
 
 ![ec2-pic-11](Images/ec2-pic-11.png)
+
+<br>
+
 ![ec2-pic-12](Images/ec2-pic-12.png)
 
 ---
 
-<br> 
+<br>
 
 ### Step 12: Navigate to the Desktop, create a directory/folder called Nginx, navigate to the directory/folder Nginx and drag the Nginx-key.pem into the Nginx folder.
 
@@ -147,7 +149,7 @@ step 2. cd Nginx
 
 ---
 
-<br> 
+<br>
 
 ### Step 13: To ensure only you have access to this key, run the following command:
 
@@ -159,7 +161,7 @@ chmod 400 "Nginx-key.pem"
 
 ---
 
-<br> 
+<br>
 
 ### Step 14: Copy the ssh command (at the bottom of the first picture) from the Connect to instance page and run it in your terminal, in the Nginx folder you created for step 12, to connect to your EC2 instance (as you can see in the 2nd picture below).
 
@@ -168,7 +170,7 @@ chmod 400 "Nginx-key.pem"
 
 ---
 
-<br> 
+<br>
 
 ### Step 15: You are now connected to the instance over SSH.
 
@@ -176,7 +178,7 @@ chmod 400 "Nginx-key.pem"
 
 ---
 
-<br> 
+<br>
 
 ### Step 16: Install Nginx using the following command, as you can see in the screenshot below as well:
 
@@ -189,7 +191,7 @@ sudo apt install nginx
 
 ---
 
-<br> 
+<br>
 
 ### Step 17: Once the installation of Nginx is complete, check if Nginx is running by using the following command, like in the screenshot:
 
@@ -208,7 +210,7 @@ sudo systemctl start nginx
 
 ---
 
-<br> 
+<br>
 
 ### Step 18: When you stop and then start your EC2 instance again, or if it reboots for any reason (e.g., AWS maintenance or a crash), NGINX will automatically start running without you having to manually start it if you use the following command:
 
