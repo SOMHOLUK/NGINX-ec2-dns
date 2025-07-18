@@ -8,7 +8,7 @@ NGINX can also do more than just send files. A lot of people use NGINX together 
 
 ### 📄 Project Description
 
-This project involves setting up a publicly accessible NGINX web server on an Amazon EC2 instance (which is a virtual computer running in the cloud). After launching an EC2 instance, NGINX is installed and configured to serve content (such as web pages) over HTTP on port 80, with the necessary inbound rules added to the EC2 instance’s security group to allow both SSH and HTTP traffic. To make the NGINX server reachable (in this for NGINX to show the default welcome page) through a domain name (in this case : nginx.filsanhdmohamed.co.uk) instead of just an IP address (as you can also view NGINX's welcome page by using the EC2 instance's public IPv4 address, as you will see later on), an A record is created in the DNS provider Amazon Route 53. This A record points the domain to the public IP of the EC2 instance. As a result, you can open a browser and access the default NGINX welcome page simply by visiting the domain, which is in this case nginx.filsanhdmohamed.co.uk
+This project involves setting up a publicly accessible NGINX web server on an Amazon EC2 instance (which is a virtual computer running in the cloud). After launching an EC2 instance, NGINX is installed and configured to serve content (such as web pages) over HTTP on port 80, with the necessary inbound rules added to the EC2 instance’s security group to allow both SSH and HTTP traffic. To make the NGINX server reachable (in this case, for NGINX to show the default welcome page) through a domain name (in this case : nginx.filsanhdmohamed.co.uk) instead of just an IP address (as you can also view NGINX's welcome page by using the EC2 instance's public IPv4 address, as you will see later on), an A record is created in the DNS provider Amazon Route 53. This A record points the domain to the public IP of the EC2 instance. As a result, you can open a browser and access the default NGINX welcome page simply by visiting the domain, which is in this case nginx.filsanhdmohamed.co.uk
 
 ---
 
@@ -270,7 +270,7 @@ sudo systemctl enable nginx
 
 <br>
 
-### Step 23: The subdomain was given the name nginx as you can see in the screenshot below, the Rercord type was set to A, and the public IP of the EC2 instance was put into the value section as you can see in the screenshot below.Here, you have created an A record in DNS that points your domain name (in my case: nginx.filsanhdmohamed.co.uk) to the EC2 public IPv4 address. Click on Create a record, at the bottom right.
+### Step 23: The subdomain was given the name nginx as you can see in the screenshot below, the Record type was set to A, and the public IPv4 address of the EC2 instance was put into the value section as you can see in the screenshot below. Here, you have created an A record in DNS that points your domain name (in my case: nginx.filsanhdmohamed.co.uk) to the EC2 public IPv4 address. Click on Create a record, at the bottom right.
 
 <br>
 
@@ -290,7 +290,7 @@ sudo systemctl enable nginx
 
 <br>
 
-### Step 26: When you are done with using the Amazon EC2 instance, you get rid of it by selecting the instance as in the picture, clicking on Instance state and then click terminate/delete the instance. You do this so you will not be charged unnecessarily for an EC2 instance that you no longer use.
+### Step 26: When you are done with using the Amazon EC2 instance, you get rid of it by selecting the instance as in the picture, clicking on Instance state and then click terminate/delete the instance. You do this so that you will not be charged unnecessarily for an EC2 instance that you no longer use.
 
 ![ec2-pic-28](Images/ec2-pic-28.png)
 
